@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Youtube_logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <title>YouTeube - Vérification</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Button styles */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        header {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            gap: 50px;
+        }
+
+        h1 {
+            color: orangered;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        p{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: white;
+        }
+
+        #logo {
+            width: 70px;
+            height: auto;
+            top: 60%;
+            left: 50%;
+
+        }
+
+        #titre {
+            width: 250px;
+            height: auto;
+        }
+
+        #boutonFuyant {
+            position: absolute;
+            padding: 10px 20px;
+            background-color: orangered;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: left 0.2s, top 0.2s; /* Smooth movement */
+        }
+
+        #quitter {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            background-color: rgb(57, 57, 57);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #quitter:hover {
+            background-color: rgb(90, 89, 89);
+        }
+
+        #texte {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        #texte * { 
+            margin: 0; /* Supprime les marges externes des éléments */
+            padding: 0; /* Supprime les marges internes des éléments */
+            line-height: 2; /* Réduit l'espacement entre les lignes de texte */
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #000000;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: white; /* Les questions restent en blanc */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="range"],
+        input[type="radio"],
+        textarea,
+        select {
+            background-color: orangered; /* Zones de réponse */
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            color: white; /* Texte à l'intérieur */
+            width: 100%; /* Pour que ça s'aligne bien */
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none; /* Empêche le redimensionnement */
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: orangered;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #ff6347; /* Couleur légèrement plus claire au survol */
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html"><img id="logo" src="teube.svg" alt=""></a>
+    <h1><span style="color: white;">Merci de remplir ce formulaire</span> pour vérifier votre âge.</h1>
+
+    <form action="getform.php" method="get">
+        <h3>Le développeur certifie sur l'honneur que remplir ce formulaire mène vers le site YouTeube</h3>
+    
+        <div>
+            <label for="last_name">Nom:</label>
+            <input type="text" id="last_name" name="last_name" />
+        </div>
+        <br>
+        <div>
+            <label for="first_name">Prénom:</label>
+            <input type="text" id="first_name" name="first_name" />
+        </div>
+        <br>
+        <div>
+            <label for="birth_date">Date de naissance:</label>
+            <input type="date" id="birth_date" name="birth_date" />
+        </div>
+        <br>
+        <div>
+            <label>Quel est votre animal préféré ?</label>
+            <input type="text" name="favorite_animal" />
+        </div>
+        <br>
+        <div>
+            <label>Combien de doigts avez-vous ?</label>
+            <input type="number" name="fingers_count" min="0" max="20" />
+        </div>
+        <br>
+        <div>
+            <label>Préférez-vous les pommes ou les poires ?</label><br>
+            <input type="radio" name="fruit_preference" value="Pommes" /> Pommes <br>
+            <input type="radio" name="fruit_preference" value="Poires" /> Poires <br>
+            <input type="radio" name="fruit_preference" value="Aucun" /> Pêches 🍑😏
+        </div>
+        <br>
+        <div>
+            <label>A quelle fréquences pensez-vous à votre mère dans une journée ?</label>
+            <input type="range" name="penguin_thoughts" min="0" max="100" />
+        </div>
+        <div>
+            <label>A quelle fréquences pensez-vous à des pingouins dans une journée ?</label>
+            <input type="range" name="penguin_thoughts" min="0" max="100" />
+        </div>
+        <div>
+            <label>A quelle fréquences pensez-vous que le mot anticonstitutionnellement manque d'utilité, dans une journée ?</label>
+            <input type="range" name="penguin_thoughts" min="0" max="100" />
+        </div>
+        <br>
+        <div>
+            <label>Quel est votre plat préféré à 3h du matin ?</label>
+            <input type="text" name="midnight_snack" />
+        </div>
+        <br>
+        <div>
+            <label>Avez-vous déjà compté les étoiles dans le ciel ?</label><br>
+            <input type="radio" name="star_counting" value="Oui" /> Oui <br>
+            <input type="radio" name="star_counting" value="Non" /> Non
+        </div>
+        <br>
+        <div>
+            <label>Quelle est la couleur du cheval blanc de Napoléon ?</label>
+            <input type="text" name="napoleon_horse" />
+        </div>
+        <br>
+        <div>
+            <label>Évaluez votre niveau de bonheur sur une échelle de 1 à 100 :</label>
+            <input type="number" name="happiness_level" min="1" max="100" />
+        </div>
+        <br>
+        <div>
+            <label>Que feriez-vous si vous étiez un canard pendant une journée ?</label><br>
+            <textarea name="duck_plan" rows="4" cols="50"></textarea>
+        </div>
+        <br>
+        <div>
+            <label>Combien de fois avez-vous cliqué sur des boutons inutiles dans votre vie ?</label>
+            <input type="number" name="useless_clicks" />
+        </div>
+        <br>
+        <div>
+            <label>Préférez-vous les portes ou les fenêtres ?</label><br>
+            <input type="radio" name="door_or_window" value="Portes" /> Portes <br>
+            <input type="radio" name="door_or_window" value="Fenêtres" /> Fenêtres
+        </div>
+        <br>
+        <div>
+            <label>Écrivez un poème en trois mots :</label>
+            <input type="text" name="three_word_poem" />
+        </div>
+        <br>
+        <div>
+            <label>Êtes-vous une personne du matin ou du soir ?</label><br>
+            <input type="radio" name="morning_or_evening" value="Matin" /> Matin <br>
+            <input type="radio" name="morning_or_evening" value="Soir" /> Soir
+        </div>
+        <br>
+        <div>
+            <label>Si une pizza avait des émotions, que ressentirait-elle d'être mangée ?</label><br>
+            <textarea name="pizza_emotions" rows="4" cols="50"></textarea>
+        </div>
+        <br>
+        <div>
+            <label>Choisissez un superpouvoir inutile :</label>
+            <select name="useless_superpower">
+                <option value="Voler lentement">Voler très lentement</option>
+                <option value="Parler aux lampes">Stopper le temps pendant 1 sec</option>
+                <option value="Changer la couleur du lait">Avoir des yeux laser, mais le laser brule vos yeux</option>
+            </select>
+        </div>
+        <br>
+        <input type="submit" value="Envoyer ce chef-d'œuvre" />
+        <input type="reset" value="Tout effacer et recommencer" />
+    </form>
+
+    <script>
+
+        function closeWindow() {
+            window.close();
+        }
+
+        const bouton = document.getElementById('boutonFuyant');
+        const maxEscapeSpeed = 400;  // Maximum escape speed
+        const minEscapeSpeed = 10;   // Minimum escape speed
+        const returnThreshold = 200; // Distance to trigger returning to the center
+        let centerX, centerY; // Store the center coordinates
+
+        document.addEventListener('mousemove', (souris) => {
+            const rect = bouton.getBoundingClientRect();
+            const sourisX = souris.clientX;
+            const sourisY = souris.clientY;
+            const boutonX = rect.left + rect.width / 2;
+            const boutonY = rect.top + rect.height / 2;
+
+            // Calculate the distance between the mouse and the button
+            const distance = Math.sqrt(Math.pow(sourisX - boutonX, 2) + Math.pow(sourisY - boutonY, 2));
+
+            if (distance < 150) {
+                // The closer the mouse, the faster the escape speed (exponential relation)
+                const escapeSpeed = Math.min(maxEscapeSpeed, Math.max(minEscapeSpeed, maxEscapeSpeed / (distance * 0.05)));
+
+                // Calculate the angle directly away from the mouse
+                const angle = Math.atan2(boutonY - sourisY, boutonX - sourisX);
+                const targetX = rect.left + Math.cos(angle) * escapeSpeed;
+                const targetY = rect.top + Math.sin(angle) * escapeSpeed;
+
+                // Ensure the button stays within the window bounds
+                const maxLeft = window.innerWidth - rect.width;
+                const maxTop = window.innerHeight - rect.height;
+
+                const newLeft = Math.min(Math.max(0, targetX), maxLeft);
+                const newTop = Math.min(Math.max(0, targetY), maxTop);
+
+                bouton.style.left = `${newLeft}px`;
+                bouton.style.top = `${newTop}px`;
+            } else if (distance > returnThreshold) {
+                // Return the button to the center if the mouse is far enough away
+                bouton.style.left = `${centerX}px`;
+                bouton.style.top = `${centerY}px`;
+            }
+        });
+
+        // Initialize the button at the center of the page
+        const initPosition = () => {
+            const rect = bouton.getBoundingClientRect();
+            centerX = (window.innerWidth - rect.width) / 2;
+            centerY = (window.innerHeight - rect.height) / 2;
+
+            bouton.style.left = `${centerX}px`;
+            bouton.style.top = `${centerY}px`;
+        };
+
+        window.onload = initPosition;
+        window.onresize = initPosition;  // Recenter the button if the window is resized
+    </script>
+</body>
+</html>
